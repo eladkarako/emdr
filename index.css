@@ -1,0 +1,65 @@
+@charset "UTF-8";
+@namespace "http://www.w3.org/1999/xhtml";
+*{
+  box-sizing:                   border-box;
+  text-size-adjust:                   100%;
+}
+html,body{
+  height:                             100%;
+  width:                              100%;
+  padding:                               0;
+  margin:                                0;
+  display:                           block;
+  border:             1px none transparent;
+  outline:            1px none transparent;
+
+  background-color:            transparent;
+  background-clip:              border-box;
+  background-origin:            border-box;
+  background-position-x:            center;
+  background-position-y:            center;
+  background-repeat:             no-repeat;
+  background-size:                 contain;
+}
+
+html{
+  font:      20pt 'Courier New', monospace;
+  z-index:   1;
+}
+
+body{
+  z-index:   2;
+}
+
+audio{
+  display:  inline-block;
+  float:    left;
+  z-index:  3;
+  opacity:  0.01;
+}
+audio:hover{
+  opacity:  0.80;
+}
+
+ html[mode="0"]                                                           /*have cookie, have javascript.*/
+,html:not([mode="0"]):not([mode="1"]):not([mode="2"]):not([mode="3"]):not([mode="4"]):not([mode="5"]):not([mode="6"]){    /*fallback for mode that is diffrerent from what is defined. */
+  background-image: url(resources/red.gif);
+}
+html[mode="1"]{
+  background-image: url(resources/red-back-forth.gif);
+}
+html[mode="2"]{
+  background-image: url(resources/red-reverse.gif);
+}
+html[mode="3"]{
+  background-image: url(resources/red-fast.gif);
+}
+html[mode="4"]{
+  background-image: url(resources/black.gif);
+}
+html[mode="5"]{
+  background-image: url(resources/white.gif);
+}
+html[mode="6"]{
+  background-image: url(resources/blue.gif);
+}

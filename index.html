@@ -1,0 +1,76 @@
+<!doctype html>
+<!--
+╔═══════════════════════════════════════════════════════════════════════╗
+║                                                                       ║ 
+║ This page will show an animation (well.. several, in-fact),           ║
+║ and will play a 15-minutes background music (on loop).                ║
+║ Try to follow the animation with your eyes, keep the head stationary. ║
+║                                                                       ║ 
+║ Keyboard control:                                                     ║
+║   '1' - play/pause audio.                                             ║ 
+║   '2' - rotate animation.                                             ║ 
+║                                                                       ║ 
+║ reloading the page will also rotate to the next animation (~7 total). ║ 
+║ if you don't hear the audio, look for how to allow auto-play music,   ║ 
+║ on the browser.                                                       ║ 
+║                                                                       ║ 
+║                                      Elad Karako, March 2019.         ║ 
+╚═══════════════════════════════════════════════════════════════════════╝ 
+-->
+<html mode="0" encoding="UTF-8" charset="UTF-8" dir="ltr" lang="en-US" language="English" prefix="og: http://ogp.me/ns#" itemtype="http://schema.org/WebPage">
+<head>
+<!-- ╔═══════╗
+     ║ setup ║
+     ╚═══════╝ -->
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible"  content="IE=edge,chrome=1" /> 
+  <meta name="viewport"               content="height=device-height,width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no,minimal-ui" />
+  <meta name="robots"                 content="archive,follow,imageindex,index,odp,snippet,translate" /> 
+  <meta http-equiv="Cache-Control"    content="public,max-age=1800,max-stale,stale-while-revalidate=86400,stale-if-error=259200" rem="max-age=30minutes" /> 
+  <title>Self EMDR</title>
+  <meta property="og:title"           content="Self EMDR"/>
+  <meta property="keywords"           content="self treatment,EMDR,self EMDR,online EMDR,Eye Movement Desensitization and Reprocessing,bilateral stimulation,self " />
+<!-- ╔══════════╗
+     ║ security ║
+     ╚══════════╝ -->
+  <script async                       crossorigin="anonymous"  type="application/javascript"  charset="UTF-8"  src="data:application/javascript;charset=UTF-8;base64,LypQcmV2ZW50LUlGcmFtZS1IaWphY2tfKFBlcm1pc3NpdmUpLl9EZXZlbG9wZWRfQnlfRWxhZF9LYXJha29fSnVseV8yMDE4Ki9pZih0b3AubG9jYXRpb24uaG9zdG5hbWUhPT1zZWxmLmxvY2F0aW9uLmhvc3RuYW1lKXRvcC5sb2NhdGlvbi5hc3NpZ24oc2VsZi5sb2NhdGlvbi5ocmVmKTs="></script> <!-- prevent other websites loading this page in an IFRAME. -->
+<!-- ╔═════════╗
+     ║ preload ║
+     ╚═════════╝ -->
+  <link rel="preload" as="image"      crossorigin="anonymous"  type="image/gif"                                href="resources/red.gif"             />
+  <link rel="preload" as="image"      crossorigin="anonymous"  type="image/gif"                                href="resources/red-back-forth.gif"  />
+  <link rel="preload" as="image"      crossorigin="anonymous"  type="image/gif"                                href="resources/red-fast.gif"        />
+  <link rel="preload" as="image"      crossorigin="anonymous"  type="image/gif"                                href="resources/red-reverse.gif"     />
+  <link rel="preload" as="image"      crossorigin="anonymous"  type="image/gif"                                href="resources/black.gif"           />
+  <link rel="preload" as="image"      crossorigin="anonymous"  type="image/gif"                                href="resources/blue.gif"            />
+  <link rel="preload" as="image"      crossorigin="anonymous"  type="image/gif"                                href="resources/white.gif"           />
+  
+  <link rel="preload" as="script"     crossorigin="anonymous"  type="application/js"          charset="UTF-8"  href="index.js"                   />
+  <link rel="preload" as="style"      crossorigin="anonymous"  type="text/css"                charset="UTF-8"  href="index.css"                  />
+  <link rel="preload" as="image"      crossorigin="anonymous"  type="image/x-icon"                             href="favicon.ico"                />
+
+  <link rel="preload" as="audio"      crossorigin="anonymous"  type="audio/mpeg"                               href="resources/audio.mp3"        />
+  <link rel="preload" as="audio"      crossorigin="anonymous"  type="audio/m4a"                                href="resources/audio.m4a"        />
+  <link rel="preload" as="audio"      crossorigin="anonymous"  type="audio/ogg"                                href="resources/audio.ogg"        />
+  <link rel="preload" as="audio"      crossorigin="anonymous"  type="audio/ogg"                                href="resources/audio.opus"       />
+<!-- ╔═════╗
+     ║ use ║
+     ╚═════╝ -->
+  <link rel="stylesheet" media="all"  crossorigin="anonymous"  type="text/css"                charset="UTF-8"  href="index.css"                  />
+  <link rel="icon"                    crossorigin="anonymous"  type="image/x-icon"                             href="favicon.ico"                />
+  <link rel="shortcut icon"           crossorigin="anonymous"  type="image/x-icon"                             href="favicon.ico"                />
+</head>
+<body>
+  <audio autoplay="true" controls="controls" crossorigin="anonymous" loop="true" preload="auto"> 
+    <source src="resources/audio.mp3"  type="audio/mpeg"              /> 
+    <source src="resources/audio.m4a"  type="audio/m4a"               /> 
+    <source src="resources/audio.ogg"  type="audio/ogg;codecs=vorbis" /> 
+    <source src="resources/audio.opus" type="audio/ogg;codecs=opus"   /> 
+    <embed  src="resources/audio.mp3"  type="audio/mpeg"           name="audio" height="1" width="1" autostart="true" loop="true" hidden="true" /> 
+    <p>HTML5 <code>Audio</code>-Tag Is Not supported.</p>
+  </audio>
+<!--
+-->
+  <script defer                       crossorigin="anonymous"  type="application/javascript"  charset="UTF-8"  src="index.js"></script>
+</body>
+</html>

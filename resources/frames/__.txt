@@ -1,0 +1,1 @@
+d:\Software\ImageMagic\convert.exe -dispose previous -delay 10 -loop 0   *.png animation_inf.gif
