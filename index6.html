@@ -1,0 +1,282 @@
+<!doctype html>
+<html itemscope="" itemtype="http://schema.org/WebPage" dir="ltr" lang="en-US" language="English" charset="UTF-8" encoding="UTF-8">
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  <meta http-equiv="Content-Type"    content="text/html;charset=UTF-8"/>
+  <meta name="fragment"              content="!"/>
+  <meta name="viewport"              content="height=device-height,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no,width=device-width,minimal-ui"/>
+  <style type="text/css" media="all">
+  /*<![CDATA[*/
+  @charset "UTF-8";
+  @namespace "http://www.w3.org/1999/xhtml";
+  *{
+    box-sizing:                   border-box;
+    text-size-adjust:                   auto;
+  }
+  html,body{
+    height:                             100%;
+    width:                              100%;
+    padding:                               0;
+    margin:                                0;
+    overflow:                         hidden;
+  }
+  html{ 
+    font:      20pt 'Courier New', monospace;
+  }
+  body{
+    background:               none lightblue;
+  }
+@keyframes xAxis {
+  50% {
+    animation-timing-function: cubic-bezier(0.02, 0.01, 0.21, 1);
+    transform: translateY(65vmin);
+  }
+}
+@keyframes yAxis {
+  50% {
+    animation-timing-function: cubic-bezier( 0.3, 0.27, 0.07, 1.64);
+    transform: translateX(63vmax);
+  }
+}
+
+.dot{       animation: xAxis 6.1s infinite cubic-bezier(0.02, 0.01, 0.21, 1.00);}
+.dot::after{animation: yAxis 4.1s infinite cubic-bezier( 0.3, 0.27, 0.07, 1.64);}
+
+.dot{
+  width: 60px;
+  height: 60px;
+  position:absolute;
+  left:60px;
+  top:30px;
+}
+.dot::after{
+  width: 60px;
+  height: 60px;
+  position:absolute;
+  left:60px;
+  top:20px;
+  content:'';
+  display: block;
+will-change:transform;
+  border:white 4px solid;
+  background-color: red;
+  border-radius: 60px;
+}
+
+
+
+
+/*--------------------------------------------------------------------------------------------button*/
+[button], [button]:focus, [button]:hover, [button]:active{ text-decoration:none; outline:none;    }
+
+[button]{                           background-image:none; background-color:darkgray;            }
+[button]:hover{                     background-image:none; background-color:darkgray;            }
+
+[button]{
+  color: white;
+  display:         inline-block !important;
+  position:        relative;
+  cursor:          pointer;
+  border-radius:   5px;
+  letter-spacing:  -.5px;
+  padding-left:    2pt;
+  padding-right:   2pt;
+  margin:          4pt;
+  z-index:        9999;
+}
+
+[button]{
+  box-sizing:        border-box;   /*fix white space showing*/
+  background-origin: border-box;
+  background-size:   cover;
+}
+
+[button]{                          /*making button click better*/
+  resize: none;
+
+ -webkit-user-focus: none;
+    -moz-user-focus: none;
+     -ms-user-focus: none;
+      -o-user-focus: none;
+         user-focus: none;
+
+-webkit-user-select: none;
+   -moz-user-select: none;
+    -ms-user-select: none;
+     -o-user-select: none;
+        user-select: none;
+
+         /*reduce click-delay (double click can be used as zoom, by mobile-devices, this way it is not */
+        touch-action:  pan-x pan-y;
+-moz-touch-action:  pan-x pan-y;
+-webkit-touch-action:  pan-x pan-y;
+}
+
+[button]{         border:1px solid lightgray;      background-image:linear-gradient(lightgray, black);  }
+[button]:focus{   border:1px solid lightgray;                                                           }
+[button]:hover{   border:1px solid lightgray;      background-image:linear-gradient(black, lightgray);  }
+[button]:active{  border:1px solid white;          background-image:linear-gradient(black, lightgray);  }
+/*------------------------------------------------------------------------------------------------------*/
+
+audio{
+ -webkit-user-focus: none;
+    -moz-user-focus: none;
+     -ms-user-focus: none;
+      -o-user-focus: none;
+         user-focus: none;
+
+-webkit-user-select: none;
+   -moz-user-select: none;
+    -ms-user-select: none;
+     -o-user-select: none;
+        user-select: none;
+}
+
+
+[hidden]{ display:none; }
+
+
+[button],audio{opacity:0.001;}
+
+[button]:focus,[button]:hover,[button]:active
+,audio:focus,audio:hover,audio:active{opacity:0.80;}
+
+audio,[button]{
+  float:left;
+  margin:          4pt;
+  display:inline-block;
+}
+
+audio{
+ border:1px solid lightgray;
+ border-radius:5px;
+}
+
+
+/*]]>*/
+</style>
+<script src="resources/nosleep.js"></script>
+</head>
+<body>
+<div button hidden fullscreen >&#x21E7;&#xFE0E;</div>
+<audio controls="controls" crossorigin="anonymous" loop="true" preload="metadata"> 
+  <source src="resources/audio.mp3"  type="audio/mpeg"              /> 
+  <source src="resources/audio.m4a"  type="audio/m4a"               /> 
+  <source src="resources/audio.ogg"  type="audio/ogg;codecs=vorbis" /> 
+  <source src="resources/audio.opus" type="audio/ogg;codecs=opus"   /> 
+  <embed  src="resources/audio.mp3"  type="audio/mpeg"           name="audio" height="1" width="1" loop="true" hidden="true" /> 
+  <p>HTML5 <code>Audio</code>-Tag Is Not supported.</p>
+</audio>
+
+<video controls="controls" crossorigin="anonymous" loop="true" muted="true" preload="auto" poster="poster.jpg">
+  <source src="resources/video_h264.mp4"    type='video/mp4;  codecs="avc1.42001E"'  />
+  <source src="resources/video_vp9.webm"    type='video/webm; codecs="vp9.0"'        />
+  <source src="resources/video_vp8.webm"    type='video/webm; codecs="vp8.0"'        />
+  <source src="resources/video_theora.ogv"  type='video/ogg;  codecs="theora"'       />
+  <source src="resources/video_mpeg4.avi"   type='video/avi;  codecs="mpeg4"'        />
+  <p>No Support For HTML5's-video.</p>
+</video>
+
+<script>
+  "use strict";
+  function is_support_passive(){ "use strict";
+    var passiveSupported = false; 
+    
+    try{
+    var options = {  get passive(){passiveSupported=true;}  }; //function accessed on newer-browsers with support for 'passive' property.
+    self.addEventListener("test", options, options);
+    self.removeEventListener("test", options, options);
+    }catch(err){passiveSupported=false;}
+    
+    return passiveSupported;
+  }
+
+  function fullscreen_on(element){
+    var f,result;
+    element = ("undefined" === typeof element) ? self.document.documentElement : element;
+    f = false
+        ||element.requestFullscreen
+        ||element.msRequestFullscreen
+        ||element.mozRequestFullScreen
+        ||element.webkitRequestFullscreen;
+    if("function" !== typeof f) return;
+    result = f.call(element);                 //since the function is disattached we need to supply a 'this' using '.call' :    https://www.reddit.com/r/learnjavascript/comments/6tdsqf/why_does_assigning_any_of_the_requestfullscreen/dljzs9m/
+
+    result.then(function(){     console.log("fullscreen is on, success.");                          })
+          .catch(function(err){ console.log("fullscreen is still off due to an error.",err);        })
+          ;
+  }
+
+  function fullscreen_off(){
+    var f,result;
+    var f = false
+            ||self.document.exitFullscreen
+            ||self.document.msExitFullscreen
+            ||self.document.mozCancelFullScreen
+            ||self.document.webkitExitFullscreen;
+    if("function" !== typeof f) return;
+    result = f.call(self.document);        //since the function is disattached we need to supply a 'this' using '.call' :    https://www.reddit.com/r/learnjavascript/comments/6tdsqf/why_does_assigning_any_of_the_requestfullscreen/dljzs9m/
+
+    result.then(function(){     console.log("fullscreen is off, success.");                         })
+          .catch(function(err){ console.log("fullscreen is on off due to an error.",err);           })
+          ;
+  }
+
+  function is_fullscreen_on(){
+    return null !== (false
+                    ||document.fullscreenElement
+                    ||document.msFullscreenElement
+                    ||document.mozFullScreenElement
+                    ||document.webkitFullscreenElement
+                    ||null);
+  }
+
+  function toggle_fullscreen(){
+    if(false === is_fullscreen_on()){
+      console.log("is not in fullscreen, turning on.");
+      nosleep.enable();
+      fullscreen_on(undefined);
+    }
+    else{
+      console.log("is in fullscreen, turning off.");
+      nosleep.disable();
+      fullscreen_off();
+    }
+  }
+
+  function fullscreen_change_handler(ev){
+    if(false === is_fullscreen_on()){
+      document.querySelector("div[button]").innerText="\u21E7\uFE0E";
+    }
+    else{
+      document.querySelector("div[button]").innerText="\u21E9\uFE0E";
+    }
+  }
+  
+//-----------------------------------------------------------------------------program start.
+  var nosleep = new NoSleep();
+
+  var button_fullscreen;
+  var fullscreen_enabled = false
+                          ||self.document.fullscreenEnabled
+                          ||self.document.msFullscreenEnabled
+                          ||self.document.mozFullScreenEnabled
+                          ||self.document.webkitFullscreenEnabled
+                          ;
+
+  if(true === fullscreen_enabled){  //https://developer.mozilla.org/en-US/docs/Web/API/Document/fullscreenEnabled
+    button_fullscreen = document.querySelector("div[button]");
+    button_fullscreen.onclick = function(ev){
+                                  toggle_fullscreen(document.querySelector("body"));
+                                };
+    button_fullscreen.removeAttribute("hidden");
+  }
+  else{
+    console.error("no support for fullscreen-API.");
+  }
+  
+  document.onfullscreenchange = fullscreen_change_handler;
+</script>
+<div class="dot"></div>
+</body>
+</html>
