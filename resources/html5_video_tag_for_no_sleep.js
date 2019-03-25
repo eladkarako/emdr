@@ -1,5 +1,5 @@
 "use strict";
-var video, source, body;
+var video, source, html;
 
 video = document.createElement("video");
 video.setAttribute("preload",     "auto");
@@ -28,15 +28,15 @@ video.addEventListener("timeupdate", function(){
   if(video.currentTime > 0.5) video.currentTime = 0.100;
 });
 
-body = document.querySelector("body");
-body.onclick = function(){
+html = document.querySelector("html");
+html.onclick = function(){
   if(video.paused){
     video.play();
     document.title="playing";
-    body.setAttribute("isplaying","true");
+    html.setAttribute("isplaying","true");
   }else{
     video.pause();
     document.title="stopped";
-    body.setAttribute("isplaying","false");
+    html.setAttribute("isplaying","false");
   }
 };
