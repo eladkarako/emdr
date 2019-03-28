@@ -1,75 +1,99 @@
 "use strict";
-var audio = document.querySelector("audio");
 
-HTMLAudioElement.prototype.is_playing  = function(){return !(this.paused);};
-HTMLAudioElement.prototype.toggle_play = function(){
-                                                    (true === this.is_playing()) ? this.pause() : this.play();
-                                                   };
-
-var MAX_MODE = 7;   //modes available 0-to-6 (7 modulu).
-
-
-function get_mode(){  //extract last (or not existing) mode from cookie. does not update cookie.
-  var number = document.cookie
-                       .split(';')
-                       .shift()
-                       .split("=")
-                       .pop()
-                       .replace(/\s+/g,"")
-                       ;
-  number = (true === /NaN/i.test(  String(Number(number))  )) ? 0 : Number(number);   //valid number (fallback to 0).
-  return number;
+function is_support_passive(){
+  var passiveSupported = false; 
+  
+  try{
+  var options = {  get passive(){passiveSupported=true;}  }; //function accessed on newer-browsers with support for 'passive' property.
+  self.addEventListener("test", options, options);
+  self.removeEventListener("test", options, options);
+  }catch(err){passiveSupported=false;}
+  
+  return passiveSupported;
 }
 
+function fullscreen_on(element){
+  var f,result;
+  element = ("undefined" === typeof element) ? self.document.documentElement : element;
+  f = false
+      ||element.requestFullscreen
+      ||element.msRequestFullscreen
+      ||element.mozRequestFullScreen
+      ||element.webkitRequestFullscreen;
+  if("function" !== typeof f) return;
+  result = f.call(element);                 //since the function is disattached we need to supply a 'this' using '.call' :    https://www.reddit.com/r/learnjavascript/comments/6tdsqf/why_does_assigning_any_of_the_requestfullscreen/dljzs9m/
 
-function set_mode(number){    //
-  number = number % MAX_MODE;
-  document.cookie = "mode=" + number + "; ";
+  result.then(function(){     console.log("fullscreen is on, success.");                          })
+        .catch(function(err){ console.log("fullscreen is still off due to an error.",err);        })
+        ;
 }
 
+function fullscreen_off(){
+  var f,result;
+  var f = false
+          ||self.document.exitFullscreen
+          ||self.document.msExitFullscreen
+          ||self.document.mozCancelFullScreen
+          ||self.document.webkitExitFullscreen;
+  if("function" !== typeof f) return;
+  result = f.call(self.document);        //since the function is disattached we need to supply a 'this' using '.call' :    https://www.reddit.com/r/learnjavascript/comments/6tdsqf/why_does_assigning_any_of_the_requestfullscreen/dljzs9m/
 
-/* ╔═══════════════╗
-   ║ program start ║
-   ╚═══════════════╝ */
+  result.then(function(){     console.log("fullscreen is off, success.");                         })
+        .catch(function(err){ console.log("fullscreen is on off due to an error.",err);           })
+        ;
+}
 
+function is_fullscreen_on(){
+  return null !== (false
+                  ||document.fullscreenElement
+                  ||document.msFullscreenElement
+                  ||document.mozFullScreenElement
+                  ||document.webkitFullscreenElement
+                  ||null);
+}
 
-try{
-audio.play();     //auto-play audio.
-}catch(err){}
-
-
-document.querySelector('html').setAttribute("mode", get_mode());    //corrent mode
-
-set_mode(  get_mode() + 1  );                                       //advance to next-mode.
-
-
-self.document.title = "#" + get_mode();
-try{
-top.document.title  = "#" + get_mode();
-}catch(err){}
-
-
-/* ╔══════════════════╗
-   ║ keyboard control ║
-   ║ 1-audio toggle.  ║
-   ║ 2-change mode.   ║
-   ╚══════════════════╝ */
-
-
-function keydown_handler(ev){
-  if(49 === ev.keyCode || 49 === ev.which){
-    audio.toggle_play();
+function toggle_fullscreen(){
+  if(false === is_fullscreen_on()){
+    console.log("is not in fullscreen, turning on.");
+    nosleep.enable();
+    fullscreen_on(undefined);
   }
-  else if(50 === ev.keyCode || 50 === ev.which){
-    set_mode(  get_mode() + 1  ); //advance to next-mode.
-    document.querySelector('html').setAttribute("mode", get_mode());    //corrent mode
-
-    self.document.title = "#" + get_mode();
-    try{
-    top.document.title  = "#" + get_mode();
-    }catch(err){}
+  else{
+    console.log("is in fullscreen, turning off.");
+    nosleep.disable();
+    fullscreen_off();
   }
-  console.log(ev);
 }
 
-self.onkeydown = keydown_handler;
+function fullscreen_change_handler(ev){
+  if(false === is_fullscreen_on()){
+    document.querySelector("div[button]").innerText="\u21E7\uFE0E";
+  }
+  else{
+    document.querySelector("div[button]").innerText="\u21E9\uFE0E";
+  }
+}
+
+//-----------------------------------------------------------------------------program start.
+var nosleep = new NoSleep();
+
+var button_fullscreen;
+var fullscreen_enabled = false
+                        ||self.document.fullscreenEnabled
+                        ||self.document.msFullscreenEnabled
+                        ||self.document.mozFullScreenEnabled
+                        ||self.document.webkitFullscreenEnabled
+                        ;
+
+if(true === fullscreen_enabled){  //https://developer.mozilla.org/en-US/docs/Web/API/Document/fullscreenEnabled
+  button_fullscreen = document.querySelector("div[button]");
+  button_fullscreen.onclick = function(ev){
+                                toggle_fullscreen(document.querySelector("body"));
+                              };
+  button_fullscreen.removeAttribute("hidden");
+}
+else{
+  console.error("no support for fullscreen-API.");
+}
+
+document.onfullscreenchange = fullscreen_change_handler;

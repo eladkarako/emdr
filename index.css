@@ -2,64 +2,139 @@
 @namespace "http://www.w3.org/1999/xhtml";
 *{
   box-sizing:                   border-box;
-  text-size-adjust:                   100%;
+  text-size-adjust:                   auto;
 }
 html,body{
   height:                             100%;
   width:                              100%;
   padding:                               0;
   margin:                                0;
-  display:                           block;
-  border:             1px none transparent;
-  outline:            1px none transparent;
-
-  background-color:            transparent;
-  background-clip:              border-box;
-  background-origin:            border-box;
-  background-position-x:            center;
-  background-position-y:            center;
-  background-repeat:             no-repeat;
-  background-size:                 contain;
+  overflow:                         hidden;
 }
-
-html{
+html{ 
   font:      20pt 'Courier New', monospace;
-  z-index:   1;
+}
+body{
+  background:               none lightblue;
+}
+@keyframes xAxis {
+  50% {
+    animation-timing-function: cubic-bezier(0.02, 0.01, 0.21, 1);
+    transform: translateY(65vmin);
+  }
+}
+@keyframes yAxis {
+  50% {
+    animation-timing-function: cubic-bezier( 0.3, 0.27, 0.07, 1.64);
+    transform: translateX(63vmax);
+  }
 }
 
-body{
-  z-index:   2;
+.dot{       animation: xAxis 6.1s infinite cubic-bezier(0.02, 0.01, 0.21, 1.00);}
+.dot::after{animation: yAxis 4.1s infinite cubic-bezier( 0.3, 0.27, 0.07, 1.64);}
+
+.dot{
+  width: 60px;
+  height: 60px;
+  position:absolute;
+  left:40px;
+  top:30px;
 }
+.dot::after{
+  width: 60px;
+  height: 60px;
+  position:absolute;
+  left:40px;
+  top:20px;
+  content:'';
+  display: block;
+will-change:transform;
+  border:white 4px solid;
+  background-color: red;
+  border-radius: 60px;
+}
+
+
+
+
+/*--------------------------------------------------------------------------------------------button*/
+[button], [button]:focus, [button]:hover, [button]:active{ text-decoration:none; outline:none;    }
+
+[button]{                           background-image:none; background-color:darkgray;            }
+[button]:hover{                     background-image:none; background-color:darkgray;            }
+
+[button]{
+  color: white;
+  display:         inline-block !important;
+  position:        relative;
+  cursor:          pointer;
+  border-radius:   5px;
+  letter-spacing:  -.5px;
+  padding-left:    2pt;
+  padding-right:   2pt;
+  margin:          4pt;
+  z-index:        9999;
+}
+
+[button]{
+  box-sizing:        border-box;   /*fix white space showing*/
+  background-origin: border-box;
+  background-size:   cover;
+}
+
+[button]{                          /*making button click better*/
+  resize: none;
+
+ -webkit-user-focus: none;
+    -moz-user-focus: none;
+     -ms-user-focus: none;
+      -o-user-focus: none;
+         user-focus: none;
+
+-webkit-user-select: none;
+   -moz-user-select: none;
+    -ms-user-select: none;
+     -o-user-select: none;
+        user-select: none;
+
+         /*reduce click-delay (double click can be used as zoom, by mobile-devices, this way it is not */
+        touch-action:  pan-x pan-y;
+-moz-touch-action:  pan-x pan-y;
+-webkit-touch-action:  pan-x pan-y;
+}
+
+[button]{         border:1px solid lightgray;      background-image:linear-gradient(lightgray, black);  }
+[button]:focus{   border:1px solid lightgray;                                                           }
+[button]:hover{   border:1px solid lightgray;      background-image:linear-gradient(black, lightgray);  }
+[button]:active{  border:1px solid white;          background-image:linear-gradient(black, lightgray);  }
+/*------------------------------------------------------------------------------------------------------*/
 
 audio{
-  display:  inline-block;
-  float:    left;
-  z-index:  3;
-  opacity:  0.01;
-}
-audio:hover{
-  opacity:  0.80;
+ -webkit-user-focus: none;
+    -moz-user-focus: none;
+     -ms-user-focus: none;
+      -o-user-focus: none;
+         user-focus: none;
+
+-webkit-user-select: none;
+   -moz-user-select: none;
+    -ms-user-select: none;
+     -o-user-select: none;
+        user-select: none;
 }
 
- html[mode="0"]                                                           /*have cookie, have javascript.*/
-,html:not([mode="0"]):not([mode="1"]):not([mode="2"]):not([mode="3"]):not([mode="4"]):not([mode="5"]):not([mode="6"]){    /*fallback for mode that is diffrerent from what is defined. */
-  background-image: url(resources/red.gif);
+
+[hidden]{ display:none; }
+
+
+[button],audio{opacity:0.001;}
+
+[button]:focus,[button]:hover,[button]:active
+,audio:focus,audio:hover,audio:active{opacity:0.80;}
+
+audio,[button]{
+  float:left;
+  margin:          4pt;
 }
-html[mode="1"]{
-  background-image: url(resources/red-back-forth.gif);
-}
-html[mode="2"]{
-  background-image: url(resources/red-reverse.gif);
-}
-html[mode="3"]{
-  background-image: url(resources/red-fast.gif);
-}
-html[mode="4"]{
-  background-image: url(resources/black.gif);
-}
-html[mode="5"]{
-  background-image: url(resources/white.gif);
-}
-html[mode="6"]{
-  background-image: url(resources/blue.gif);
-}
+
+audio{border:1px solid lightgray;}
