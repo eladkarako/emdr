@@ -68,7 +68,7 @@ body{
 
 @media (orientation:landscape) {
   .dot::after{
-    left:             12vmax;
+    left:             12.5vmax;
     top:               2vmin;
     border-radius:    12vmin;
     width:            12vmin;
