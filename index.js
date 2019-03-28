@@ -88,11 +88,11 @@ var fullscreen_enabled = false
 if(true === fullscreen_enabled){  //https://developer.mozilla.org/en-US/docs/Web/API/Document/fullscreenEnabled
   button_fullscreen = document.querySelector("div[button]");
   button_fullscreen.onclick = function(ev){
-                                toggle_fullscreen(document.querySelector("body"));
+                                toggle_fullscreen();
                               };
 
-  document.querySelector("body").ondblclick  = function(ev){  //double-click on the document.
-                                                toggle_fullscreen(document.querySelector("body"));
+  self.document.documentElement.ondblclick  = function(ev){  //double-click on the document.
+                                                toggle_fullscreen();
                                               };
   button_fullscreen.removeAttribute("hidden");
 }
