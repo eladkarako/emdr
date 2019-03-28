@@ -9,7 +9,7 @@ hover your mouse above (or touch) the top-left corner to reveal the 'full-screen
 <img src="resources/full_screen_button.png" />
 </li>
 <li>
-(optional) hover your mouse above (or touch) slightly left to where the 'full-screen button' was, to reveal the audio-player, then click the 'play' button to start a 15-minutes binaural-audio, then click something else to remove the focus from the audio-player allowing it to hide-itself again.
+(optional) hover your mouse above (or touch) slightly right to where the 'full-screen button' was, to reveal the audio-player, then click the 'play' button to start a 15-minutes binaural-audio, then click something else to remove the focus from the audio-player allowing it to hide-itself again.
 <br/>
 <img src="resources/audio_player.png" />
 </li>
