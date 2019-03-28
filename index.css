@@ -37,14 +37,14 @@ body{
   width: 60px;
   height: 60px;
   position:absolute;
-  left:58px;
+  left:55px;
   top:20px;
 }
 .dot::after{
   width: 60px;
   height: 60px;
   position:absolute;
-  left:58px;
+  left:55px;
   top:20px;
   content:'';
   display: block;
