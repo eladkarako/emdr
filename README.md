@@ -9,6 +9,9 @@ hover your mouse above (or touch) the top-left corner to reveal the 'full-screen
 <img src="resources/full_screen_button.png" />
 <br/>
 You can also simply <strong>double-click the page</strong> (or fast-tap twice for mobile-devices) to switch full-screen ON or OFF.
+<br/>
+<img src="resources/full_screen_double_tap.png" />
+
 </li>
 <li>
 (optional) hover your mouse above (or touch) slightly right to where the 'full-screen button' was, to reveal the audio-player, then click the 'play' button to start a 15-minutes binaural-audio, then click something else to remove the focus from the audio-player allowing it to hide-itself again.
