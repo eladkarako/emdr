@@ -15,6 +15,10 @@ hover your mouse above (or touch) the top-left corner to reveal the 'full-screen
 </li>
 <li>
 adjust your chair so that your face will be as close to the screen as possible, but make sure you still see everything clear and in-focus.
+<br/>
+<img src="resources/face-near-screen.png" />
+<br/>
+If you are using a mobile-device with a screen size about 6Inch try to hold the screen about 5CM from your nose, to maximize the amount of movement the eyes can do.
 </li>
 <li>
 Follow the red-dot with your eyes, keeping your head still, you can focus your mind in either bad or good thoughts, allow the thoughts to stream through your mind without trying to stop them.
