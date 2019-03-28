@@ -2,7 +2,7 @@
 @namespace "http://www.w3.org/1999/xhtml";
 *{
   box-sizing:                   border-box;
-  text-size-adjust:                   auto;
+  text-size-adjust:                   100%;
 }
 html,body{
   height:                             100%;
@@ -15,45 +15,66 @@ html{
   font:      20pt 'Courier New', monospace;
 }
 body{
-  background:               none lightblue;
+  background-color: lightblue;
 }
-@keyframes xAxis {
-  50% {
+
+
+/*portrait*/
+@keyframes xAxis {50%{
+  animation-timing-function: cubic-bezier(0.02, 0.01, 0.21, 1);
+  transform: translateY(87vmax);
+}}
+@keyframes yAxis {50%{
+  animation-timing-function: cubic-bezier( 0.3, 0.27, 0.07, 1.64);
+  transform: translateX(63vmin);
+}}
+
+@media (orientation:landscape) {
+  @keyframes xAxis {50%{
     animation-timing-function: cubic-bezier(0.02, 0.01, 0.21, 1);
-    transform: translateY(65vmin);
-  }
-}
-@keyframes yAxis {
-  50% {
+    transform: translateY(82vmin);
+  }}
+  @keyframes yAxis {50%{
     animation-timing-function: cubic-bezier( 0.3, 0.27, 0.07, 1.64);
-    transform: translateX(61vmax);
-  }
+    transform: translateX(68vmax);
+  }}
 }
+
+
 
 .dot{       animation: xAxis 6.1s infinite cubic-bezier(0.02, 0.01, 0.21, 1.00);}
 .dot::after{animation: yAxis 4.1s infinite cubic-bezier( 0.3, 0.27, 0.07, 1.64);}
 
 .dot{
-  width: 60px;
-  height: 60px;
-  position:absolute;
-  left:50px;
-  top:20px;
+  top:               0vmin;
+  left:              0vmin;
+  position:       absolute;
 }
 .dot::after{
-  width: 60px;
-  height: 60px;
-  position:absolute;
-  left:50px;
-  top:20px;
-  content:'';
-  display: block;
-will-change:transform;
-  border:white 4px solid;
-  background-color: red;
-  border-radius: 60px;
+  content:              '';
+  display:           block;
+  will-change:   transform;
+  background-color:    red;
+  border:  white 4px solid;
+  position:       absolute;
+
+/*portrait*/
+  left:              6vmax;
+  top:               2vmin;
+  border-radius:    12vmin;
+  width:            12vmin;
+  height:           12vmin;
 }
 
+@media (orientation:landscape) {
+  .dot::after{
+    left:             12vmax;
+    top:               2vmin;
+    border-radius:    12vmin;
+    width:            12vmin;
+    height:           12vmin;
+  }
+}
 
 
 
