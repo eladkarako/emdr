@@ -26,7 +26,7 @@ body{
 @keyframes yAxis {
   50% {
     animation-timing-function: cubic-bezier( 0.3, 0.27, 0.07, 1.64);
-    transform: translateX(63vmax);
+    transform: translateX(61vmax);
   }
 }
 
@@ -37,14 +37,14 @@ body{
   width: 60px;
   height: 60px;
   position:absolute;
-  left:40px;
-  top:30px;
+  left:58px;
+  top:20px;
 }
 .dot::after{
   width: 60px;
   height: 60px;
   position:absolute;
-  left:40px;
+  left:58px;
   top:20px;
   content:'';
   display: block;
