@@ -90,6 +90,10 @@ if(true === fullscreen_enabled){  //https://developer.mozilla.org/en-US/docs/Web
   button_fullscreen.onclick = function(ev){
                                 toggle_fullscreen(document.querySelector("body"));
                               };
+
+  document.querySelector("body").ondblclick  = function(ev){  //double-click on the document.
+                                                toggle_fullscreen(document.querySelector("body"));
+                                              };
   button_fullscreen.removeAttribute("hidden");
 }
 else{
