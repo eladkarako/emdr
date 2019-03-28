@@ -4,19 +4,32 @@
 <!-- ╔═══════╗
      ║ setup ║
      ╚═══════╝ -->
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-  <meta http-equiv="Content-Type"    content="text/html;charset=UTF-8"/>
-  <meta http-equiv="Cache-Control"   content="public,max-age=1800,max-stale,stale-while-revalidate=86400,stale-if-error=259200" rem="max-age=30minutes" /> 
-  <meta name="viewport"              content="height=device-height,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no,width=device-width,minimal-ui"/>
-  <meta name="robots"                content="archive,follow,imageindex,index,odp,snippet,translate" /> 
-  <meta name="fragment"              content="!"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"             />
+  <meta http-equiv="Content-Type"    content="text/html;charset=UTF-8"      />
+  <meta http-equiv="Cache-Control"   content="public,max-age=1800,max-stale,stale-while-revalidate=86400,stale-if-error=259200" rem="max-age=30minutes"                   />
+  <meta name="viewport"              content="height=device-height,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no,width=device-width,minimal-ui"  />
+  <meta name="robots"                content="archive,follow,imageindex,index,odp,snippet,translate"  />
+  <meta http-equiv="Feature-Policy"  content='{"fullscreen":["*"]}'         />
+  <meta name="fragment"              content="!"                            />
 <!-- ╔══════════════════╗
      ║ meta-description ║
      ╚══════════════════╝ -->
+  <meta name="target"                content="all"                          />
+  <meta name="audience"              content="all"                          />
+  <meta name="coverage"              content="Worldwide"                    />
+  <meta name="distribution"          content="Global"                       />
+  <meta name="og:type"               content="website"                      />
+  <meta name="rating"                content="safe for kids"                />
+  <meta name="HandheldFriendly"      content="True"                         />
+
   <link rel="icon"                   crossorigin="anonymous"  type="image/x-icon"                             href="favicon.ico"                />
   <link rel="shortcut icon"          crossorigin="anonymous"  type="image/x-icon"                             href="favicon.ico"                />
-  <meta property="og:title"          content="EMDR"/>
-  <meta property="keywords"          content="EMDR,online EMDR,self treatment,self EMDR,Eye Movement Desensitization and Reprocessing,bilateral stimulation,self " />
+  <meta name="author"                content="Elad Karako"                                                                                      />
+  <meta property="og:locale"         content="en_GB"                                                                                            />
+  <meta property="og:title"          content="EMDR"                                                                                             />
+  <meta property="og:url"            content="https://emdr.eladkarako.com/"                                                                     />
+  <meta name="og:description"        content="Online self-treatment EMDR. For more information see: https://github.com/eladkarako/emdr/ ."      />
+  <meta property="keywords"          content="EMDR,online EMDR,self treatment,self EMDR,Eye Movement Desensitization and Reprocessing,bilateral stimulation,self "   />
   <title>EMDR</title>
 <!-- ╔════════════════════╗
      ║ security           ║
@@ -46,14 +59,14 @@
 <!-- ╔══════════════╗
      ║ audio-player ║
      ╚══════════════╝ -->
-<audio controls="controls" crossorigin="anonymous" loop="true" preload="metadata"> 
-  <source src="resources/audio.mp3"  type="audio/mpeg"              /> 
-  <source src="resources/audio.m4a"  type="audio/m4a"               /> 
-  <source src="resources/audio.ogg"  type="audio/ogg;codecs=vorbis" /> 
-  <source src="resources/audio.opus" type="audio/ogg;codecs=opus"   /> 
-  <embed  src="resources/audio.mp3"  type="audio/mpeg"           name="audio" height="1" width="1" autostart="true" loop="true" hidden="true" /> 
+<audio controls="controls" crossorigin="anonymous" loop="true" preload="metadata">
+  <source src="resources/audio.mp3"  type="audio/mpeg"              />
+  <source src="resources/audio.m4a"  type="audio/m4a"               />
+  <source src="resources/audio.ogg"  type="audio/ogg;codecs=vorbis" />
+  <source src="resources/audio.opus" type="audio/ogg;codecs=opus"   />
+  <embed  src="resources/audio.mp3"  type="audio/mpeg"           name="audio" height="1" width="1" autostart="true" loop="true" hidden="true" />
   <p>HTML5 <code>Audio</code>-Tag is not supported.
-  Maybe try opening one of the links below in a seperate-tab or download one of the files and play it on your device: 
+  Maybe try opening one of the links below in a seperate-tab or download one of the files and play it on your device:
   <a href="resources/audio.mp3" type="audio/mpeg">MP3</a>|<a href="resources/audio.m4a" type="audio/mpeg">M4A</a>|<a href="resources/audio.ogg" type="audio/mpeg">OGG</a>
   </p>
 </audio>
