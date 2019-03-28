@@ -14,13 +14,15 @@ hover your mouse above (or touch) the top-left corner to reveal the 'full-screen
 <img src="resources/audio_player.png" />
 </li>
 <li>
-adjust your chair so that your face will be as close to the screen as possible, but make sure you still see everything clear in-focus.
+adjust your chair so that your face will be as close to the screen as possible, but make sure you still see everything clear and in-focus.
 </li>
 <li>
-follow the red-dot with your eyes, keeping your head still, you can focus your mind in either bad or good thoughts, allow the toughts to stream through your mind an do not try to stop them.
+Follow the red-dot with your eyes, keeping your head still, you can focus your mind in either bad or good thoughts, allow the thoughts to stream through your mind without trying to stop them.
 </li>
 <li>
-you descide when you are done, when you're done, take a deep breath through your nose and exhale through your mouth.
+You descide when you are done. It is recomanded to keep for at least 10-to-15 minutes, 
+playing the audio might help you with timing 15-minutes (the audio will loop afterwards). <br/>
+<em>When Done -</em> Take a deep breath through your nose and exhale through your mouth.
 </li>
 </ol>
 
