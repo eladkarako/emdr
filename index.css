@@ -119,9 +119,11 @@ body{
         user-select: none;
 
          /*reduce click-delay (double click can be used as zoom, by mobile-devices, this way it is not */
-        touch-action:  pan-x pan-y;
--moz-touch-action:  pan-x pan-y;
 -webkit-touch-action:  pan-x pan-y;
+   -moz-touch-action:  pan-x pan-y;
+    -ms-touch-action:  pan-x pan-y;
+     -o-touch-action:  pan-x pan-y;
+        touch-action:  pan-x pan-y;
 }
 
 [button]{         border:1px solid lightgray;      background-image:linear-gradient(lightgray, black);  }
