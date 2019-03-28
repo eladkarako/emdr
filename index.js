@@ -1,4 +1,5 @@
 "use strict";
+var screen_lock;
 
 function is_support_passive(){
   var passiveSupported = false; 
@@ -56,11 +57,13 @@ function toggle_fullscreen(){
   if(false === is_fullscreen_on()){
     console.log("is not in fullscreen, turning on.");
     nosleep.enable();
+    if("undefined" !== typeof window.navigator.requestWakeLock){ try{ screen_lock = window.navigator.requestWakeLock("screen");}catch(err){} }    //trying to keep screen-ON using: https://developer.mozilla.org/en-US/docs/Archive/B2G_OS/API/Wake_Lock_API
     fullscreen_on(undefined);
   }
   else{
     console.log("is in fullscreen, turning off.");
     nosleep.disable();
+    if("undefined" !== typeof window.navigator.requestWakeLock){ try{ screen_lock.unlock(); }catch(err){} }
     fullscreen_off();
   }
 }
