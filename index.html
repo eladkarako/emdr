@@ -1,36 +1,69 @@
 <!doctype html>
 <html itemscope="" itemtype="http://schema.org/WebPage" dir="ltr" lang="en-US" language="English" charset="UTF-8" encoding="UTF-8">
 <head>
+<!-- ╔═══════╗
+     ║ setup ║
+     ╚═══════╝ -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
   <meta http-equiv="Content-Type"    content="text/html;charset=UTF-8"/>
   <meta http-equiv="Cache-Control"   content="public,max-age=1800,max-stale,stale-while-revalidate=86400,stale-if-error=259200" rem="max-age=30minutes" /> 
   <meta name="viewport"              content="height=device-height,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no,width=device-width,minimal-ui"/>
   <meta name="robots"                content="archive,follow,imageindex,index,odp,snippet,translate" /> 
   <meta name="fragment"              content="!"/>
-
-  <link rel="preload" as="script"    crossorigin="anonymous"  type="application/javascript"  charset="UTF-8"  href="index.js"                   />
-  <link rel="preload" as="style"     crossorigin="anonymous"  type="text/css"                charset="UTF-8"  href="index.css"                  />
-
-  <meta property="og:title"          content="EMDR"/>
-  <meta property="keywords"          content="self treatment,EMDR,self EMDR,online EMDR,Eye Movement Desensitization and Reprocessing,bilateral stimulation,self " />
-  <title>EMDR</title>
-
-  <link rel="stylesheet" media="all" crossorigin="anonymous"  type="text/css"                charset="UTF-8"  href="index.css"                  />
+<!-- ╔══════════════════╗
+     ║ meta-description ║
+     ╚══════════════════╝ -->
   <link rel="icon"                   crossorigin="anonymous"  type="image/x-icon"                             href="favicon.ico"                />
   <link rel="shortcut icon"          crossorigin="anonymous"  type="image/x-icon"                             href="favicon.ico"                />
+  <meta property="og:title"          content="EMDR"/>
+  <meta property="keywords"          content="EMDR,online EMDR,self treatment,self EMDR,Eye Movement Desensitization and Reprocessing,bilateral stimulation,self " />
+  <title>EMDR</title>
+<!-- ╔════════════════════╗
+     ║ security           ║
+     ║ (overcome framing) ║
+     ╚════════════════════╝ -->
+  <script async                       crossorigin="anonymous"  type="application/javascript"  charset="UTF-8"  src="data:application/javascript;charset=UTF-8;base64,LypQcmV2ZW50LUlGcmFtZS1IaWphY2tfKFBlcm1pc3NpdmUpLl9EZXZlbG9wZWRfQnlfRWxhZF9LYXJha29fSnVseV8yMDE4Ki9pZih0b3AubG9jYXRpb24uaG9zdG5hbWUhPT1zZWxmLmxvY2F0aW9uLmhvc3RuYW1lKXRvcC5sb2NhdGlvbi5hc3NpZ24oc2VsZi5sb2NhdGlvbi5ocmVmKTs="></script> <!-- prevent other websites loading this page in an IFRAME. -->
+<!-- ╔════════════════════╗
+     ║ resource (preload) ║
+     ╚════════════════════╝ -->
+  <link rel="preload" as="script"    crossorigin="anonymous"  type="application/javascript"  charset="UTF-8"  href="resources/nosleep.js"       />
+  <link rel="preload" as="script"    crossorigin="anonymous"  type="application/javascript"  charset="UTF-8"  href="index.js"                   />
+  <link rel="preload" as="style"     crossorigin="anonymous"  type="text/css"                charset="UTF-8"  href="index.css"                  />
+<!-- ╔════════════════╗
+     ║ resource (1/3) ║
+     ╚════════════════╝ -->
+  <link rel="stylesheet" media="all" crossorigin="anonymous"  type="text/css"                charset="UTF-8"  href="index.css"                  />
 </head>
 <body>
+<!-- ╔════════════════╗
+     ║ resource (2/3) ║
+     ╚════════════════╝ -->
 <script src="resources/nosleep.js"></script>
+<!-- ╔════════════════════╗
+     ║ full-screen button ║
+     ╚════════════════════╝ -->
 <div button hidden fullscreen >&#x21E7;&#xFE0E;</div>
+<!-- ╔══════════════╗
+     ║ audio-player ║
+     ╚══════════════╝ -->
 <audio controls="controls" crossorigin="anonymous" loop="true" preload="metadata"> 
   <source src="resources/audio.mp3"  type="audio/mpeg"              /> 
   <source src="resources/audio.m4a"  type="audio/m4a"               /> 
   <source src="resources/audio.ogg"  type="audio/ogg;codecs=vorbis" /> 
   <source src="resources/audio.opus" type="audio/ogg;codecs=opus"   /> 
+<!-- ╔═══════════════════════════════════════════════╗
+     ║ when there is no HTML5-support, try EMBED-tag ║
+     ╚═══════════════════════════════════════════════╝ -->
   <embed  src="resources/audio.mp3"  type="audio/mpeg"           name="audio" height="1" width="1" autostart="true" loop="true" hidden="true" /> 
-  <p>HTML5 <code>Audio</code>-Tag Is Not supported.</p>
+  <p>HTML5 <code>Audio</code>-Tag Is Not supported. You Can Try Either Downloading The Audio Or Playing It Yourself: <a href="resources/audio.mp3" type="audio/mpeg">audio.mp3</a>. </p>
 </audio>
+<!-- ╔═════════╗
+     ║ red-dot ║
+     ╚═════════╝ -->
 <div class="dot"></div>
+<!-- ╔════════════════╗
+     ║ resource (3/3) ║
+     ╚════════════════╝ -->
 <script defer crossorigin="anonymous"  type="application/javascript"  charset="UTF-8"  src="index.js"></script>
 </body>
 </html>
