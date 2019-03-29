@@ -23,7 +23,8 @@ adjust your chair so that your face will be as close to the screen as possible, 
 <br/>
 <img src="resources/face-near-screen.png" />
 <br/>
-If you are using a mobile-device with a screen size about 6Inch try to hold the screen about 5CM from your nose, to maximize the amount of movement the eyes can do.
+If you are using a mobile-device with a screen size about 6Inch try to hold the screen about 5CM from your nose, to maximize the amount of movement the eyes can do, <br/>
+if you switch to horizontal/landscape mode please reload the page, and it will be shown better.
 <br/>
 <img src="resources/mobile_screen_hold.png" />
 </li>
@@ -41,8 +42,8 @@ playing the audio might help you with timing 15-minutes (the audio will loop aft
 
 <h3>More Information (Developers)</h3>
 
-This page do not use cookies, and it does not collect any information.
-The page do not require JavaScript unless you want to use the 'full-screen' feature, the audio-player will work even without JavaScript.
+This page does not use cookies, and it does not collect any information.
+The page does not require JavaScript unless you want to use the 'full-screen' feature, the audio-player will work even without JavaScript.
 The red-dot animation is a pure-CSS animation, it is NOT RANDOM, although it might seen like it is, the reason it looks complex is because the movement uses two <code>cubic-bezier</code> functions one for each x and y axis, controling both the red-dot container and the pseudo-selector <code>::after</code> of the red-dot container, this allows a bit of micro-movement that makes the overall experiance more natural, and hints the direction of the movement, it simulates a movement done by human-hand/fingers as much as possible, the white rim/border around the dot creates the secondary effect of shaddow in the opposite direction of the movement which helps to make the movement slightly more natural, or at least easier to follow.
 
 <hr/>
