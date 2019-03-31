@@ -104,3 +104,9 @@ else{
 }
 
 document.onfullscreenchange = fullscreen_change_handler;
+
+
+//re-calibrate the red-dot borders. CSS-orientation with '@media (orientation:portrait){ / @media (orientation:landscape){' not-always handles it properly after the page has finished loading.
+self.addEventListener("orientationchange",function(){          //"resize" is another option for older browsers.         can query the current state using screen.orientation.angle 0=portrait, -90=landscape rotated to the right, 90=landscape rotated to the left.
+  self.location.reload(false);
+});
