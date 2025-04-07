@@ -51,3 +51,45 @@ The red-dot animation is a pure-CSS animation, it is NOT RANDOM, although it mig
 <h3>Resources Used (Developers)</h3>
 
 I am using https://github.com/richtr/NoSleep.js which is a JavaScript library to simulate a 'wakelock' allowing screen to avoid switching off, and some of the information shown at  http://tobiasahlin.com/blog/curved-path-animations-in-css/ - "Moving along a curved path in CSS with layered animation" by Tobias Ahlin for the smooth CSS-only red-dot movement.
+
+
+-=-=-=-
+
+202504071856
+I was using this tool in various occasions,  
+to the point the movement was embedded in my mind,  
+I started looking for the right-to-left, or even rotate on axis,  
+in various places, mostly cars speeding up from a stop-light,  
+it eventually made me a little dizzy or sea-sick.  
+the movement is smooth enough so you'll be able to track it,  
+with a help of a laser pointer from 1-2 meter while starting the page on a large screen,  
+you then try to follow as-fast-as-possible the red-circle with your laser pointer,  
+improving your attention to small movement-changes.  
+you should be able to track it quite easily, there are micro movement that hint  
+for the position the red-circle will be moving.  
+it is like a target practice without the need of ammo or time-limit, so no pressure.  
+just a practice for FOCUS.  
+
+
+NOTE.  
+even though EMDR works  
+this page didn't worked for me (at least for a long time)  
+I advise asking, and being treated by a licensed pro, before using this concept.  
+there are side-effects!  
+mostly, you probably can make it more effective by simply trusting that it will work,  
+some call it wishful thinking.  :]
+
+{ hope you will feel better. }  
+
+202504071905  
+some of the technical spec.s were changed,  
+mostly the keep-screen-aware API.  
+you can fork and fix it, or open a bug report (under issues).  
+
+
+
+
+
+
+
+
